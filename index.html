@@ -1,0 +1,86 @@
+<html>
+<head>
+<title>Hello World Javascript</title>
+<style>
+.column-style {
+	width: 20px;
+	float: left;
+	border: 1px solid orange;
+}
+.item-style {
+	width: 20px;
+	height: 20px;
+	border: 1px solid black;
+}
+
+</style>
+</head>
+<body>
+	<h1>Hello World</h1>
+	<div id="main" />
+</body>
+</html>
+<script>
+// console.log('hello world from dan');
+// document.getElementById('main');
+// var main = document.getElementById('main');
+
+// main.innerHTML = '<p>Hello from Javascript</p>';
+
+// var list = [1, 2, 3];
+
+// var newList = [];
+
+// for (i = 0; i<list.length; i++) {
+// 	console.log(i)};
+
+// var item = '<div class="item-style"></div>';
+
+// var temp = '';
+
+// for (i = 0; i < 5; i++){
+// 	temp = temp + item
+// }
+
+// var column = createColumnDiv(temp);
+
+// temp = '';
+
+// for (i = 0; i < 5; i++){
+// 	temp = temp + column
+// }
+
+// addToMain(temp);
+
+// function createColumnDiv(inner){
+// 	return '<div class="column-style">' + inner +'</div>'
+// }
+
+var grid = '';
+var counter = 0;
+for (x = 0; x < 20; x++){
+	grid += '<div class="column-style">'
+	for (y = 0; y < 20; y++){
+		grid += '<div id="' + counter + '" class="item-style" onMouseOver="itemHover(this)"></div>';
+		counter++;
+	}
+	grid += '</div>'
+}
+
+addToMain (grid);
+
+function itemHover(item){
+	console.log(window.event.keyCode)
+	if (item.getAttribute('style')){
+		item.removeAttribute('style');
+	} else {
+		item.setAttribute('style', 'background: orange');
+	}
+}
+
+function addToMain(text){
+	var main = document.getElementById('main');
+	main.innerHTML = '<p>' + text + '</p>';
+}
+
+</script>
