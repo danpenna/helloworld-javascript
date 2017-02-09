@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>
+		Text Editor
+	</title>
+	<style>
+		.input-class {
+			border: 1px solid black;
+			width: 500px;
+			height: 200px;
+			margin: 10px;
+		}
+		.output-class {
+			border: 1px solid black;
+			width: 500px;
+			height: 200px;
+			margin: 10px;
+			font-size: 16px;
+			font-family: 'Calibri';
+		}
+	</style>
+</head>
+<body>
+	<textarea class="input-class" onKeyUp="handleTextChange(this)"></textarea>
+	<div id="output" class="output-class"/>
+</body>
+<script>
+
+	var output = document.getElementById('output');
+
+	var lookupTable = {
+		"poop": "💩",
+		"angus": "🐶",
+		"aimz": "🐸"
+	}
+
+	function handleTextChange(textarea){
+		var words = textarea.value.split(' ');
+		var newwords = []
+		console.log(words)
+		for (i=0; i < words.length; i++){
+			var word = words[i];
+			var lowerCaseWord = word.toLowerCase();
+			if (lookupTable[lowerCaseWord] != undefined){
+				newwords.push(lookupTable[lowerCaseWord]);
+			} 
+			else {
+				newwords.push(word);
+			}
+
+		}
+		output.innerHTML = newwords.join(" ")
+
+	}
+</script>
+</html>
