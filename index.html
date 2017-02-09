@@ -67,7 +67,7 @@ for (x = 0; x < 20; x++){
 	grid += '</div>'
 }
 
-addToMain (grid);
+addToMain(grid);
 
 function itemHover(item){
 	console.log(window.event.keyCode)
@@ -78,9 +78,9 @@ function itemHover(item){
 	}
 }
 
-function addToMain(text){
+function addToMain(html){
 	var main = document.getElementById('main');
-	main.innerHTML = '<p>' + text + '</p>';
+	main.innerHTML = html;
 }
 
 </script>
